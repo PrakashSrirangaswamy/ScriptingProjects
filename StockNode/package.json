@@ -2,7 +2,7 @@
     "name": "node-stock",
     "version": "1.0.0",
     "description": "Node with Stock values",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -16,5 +16,8 @@
         "http": "0.0.0",
         "localStorage": "^1.0.4",
         "nodemon": "^1.19.4"
+    },
+    "devDependencies": {
+        "concurrently": "^5.0.0"
     }
 }
