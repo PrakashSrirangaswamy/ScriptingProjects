@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios')
 require('dotenv').config()
-const url = "https://www.alphavantage.co/query"
+const url = 'https://www.alphavantage.co/query';
 
 router.get('/value', function (req, res) {
     var url_value = url
