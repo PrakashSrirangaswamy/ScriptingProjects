@@ -1,12 +1,13 @@
 import React from 'react';
 
 import CryptoComp from './components/crypto';
-import RandomUser from './components/randomuser';
+// import RandomUser from './components/randomuser';
 
-function App() {
+export default function App() {
 
   return (
     <div>
+
       <CryptoComp />
       <div>
 
@@ -19,4 +20,4 @@ function App() {
     </div >
   );
 }
-export default App;
+
