@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ProgressBar from 'react-bootstrap/ProgressBar'
+
 export default class crypto extends Component {
     constructor(props) {
         super(props);
@@ -69,27 +71,29 @@ export default class crypto extends Component {
     }
 
     render() {
-        const { crypto, currency, cryptoData } = this.state;
+        const crypto, currency, cryptoData = this.state;
         return (
             <div>
-                {this.state.loading ? (<div>loading...</div>) : (
-                    <form onSubmit={this.handleSubmit}>
-                        <div>
+                {this.state.loading ? (<div>
+                    <ProgressBar animated now={45} />
+                </div>) : (
+                        <form onSubmit={this.handleSubmit}>
                             <div>
-                                <h4><i>Here is the Crypto data</i></h4>
-                                Crypto:
+                                <div>
+                                    <h4><i>Here is the Crypto data</i></h4>
+                                    Crypto:
                             <select name='crypto' value={crypto} onChange={this.changeDropDownHandler}>
-                                    <option value='BTC'>Bitcoin</option>
-                                    <option value='LTC'>Litecoin</option>
-                                </select>
-                                <br></br>
-                                Currency:
+                                        <option value='BTC'>Bitcoin</option>
+                                        <option value='LTC'>Litecoin</option>
+                                    </select>
+                                    <br></br>
+                                    Currency:
                             <select name='currency' value={currency} onChange={this.changeDropDownHandler}>
-                                    <option value='INR'>Indian Rupee</option>
-                                    <option value='USD'>US Dollors</option></select>
-                            </div>
-                            <div><br />A {cryptoData['2. From_Currency Name']} is <b>{cryptoData['3. To_Currency Code']} {cryptoData['5. Exchange Rate']}</b>  as of {cryptoData['6. Last Refreshed']}</div>
-                        </div> </form>)}
+                                        <option value='INR'>Indian Rupee</option>
+                                        <option value='USD'>US Dollors</option></select>
+                                </div>
+                                <div><br />A {cryptoData['2. From_Currency Name']} is <b>{cryptoData['3. To_Currency Code']} {cryptoData['5. Exchange Rate']}</b>  as of {cryptoData['6. Last Refreshed']}</div>
+                            </div> </form>)}
             </div >
         )
     };
